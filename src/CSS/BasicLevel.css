@@ -1,0 +1,57 @@
+.basic-container {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffeb3b, #ff9800); /* Warm gradient */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #4a148c;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .lesson-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+  }
+  
+  h2 {
+    color: #d32f2f;
+  }
+  
+  .tamil-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #3e2723;
+  }
+  
+  button {
+    padding: 12px 24px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: #ff5722;
+    color: white;
+  }
+  
+  button:hover {
+    background: #e64a19;
+  }
+  

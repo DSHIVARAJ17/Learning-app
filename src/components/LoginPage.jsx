@@ -1,46 +1,44 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../CSS/style.css"; // Import CSS
+import { useNavigate } from "react-router-dom";
+import "../CSS/Login.css"; // Uses the original CSS structure
 
 export default function LoginPage() {
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Logging in with:", form);
-    navigate("/");
+    // Placeholder for backend integration
+    navigate("/language"); // Redirect to Language Selection Page
   };
 
   return (
-    <div className="container">
+    <div className="auth-container">
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin}>
         <input
           type="email"
-          name="email"
           placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
         <input
           type="password"
-          name="password"
           placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
         <button type="submit">Login</button>
       </form>
-      <Link to="/" className="link">
-        Don't have an account? Sign Up
-      </Link>
+      <p>
+        Don't have an account?{" "}
+        <span className="link" onClick={() => navigate("/signup")}>
+          Sign Up
+        </span>
+      </p>
     </div>
   );
 }
