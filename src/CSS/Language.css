@@ -1,65 +1,56 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
-  font-family: Arial, sans-serif;
+/* ✅ Make the entire page take full screen */
+.language-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-
-.language-container {
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 500px;
+  min-height: 100vh; /* Takes full screen height */
+  width: 100%;
+  background-color: #f0f8ff; /* Light blue background */
+  padding: 20px;
 }
 
-h2 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.language-list {
+/* ✅ Ensure container takes up the entire screen width */
+.language-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 30px;
   justify-content: center;
-  padding: 10px;
+  align-items: center;
+  width: 80%;
+  padding: 30px;
 }
 
-.language-button {
-  background: #4facfe;
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  font-size: 16px;
+/* ✅ Make language boxes larger and clickable */
+.language-box {
+  border: 3px solid black;
+  border-radius: 15px;
+  background: white;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-box:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ Ensure images fit nicely */
+.language-box img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* ✅ Ensure text is visible */
+.language-box p {
+  margin-top: 10px;
+  font-size: 18px;
   font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
-}
-
-.language-button:hover {
-  background: #3a8ff2;
-}
-
-.back-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #ff5e62;
-  color: white;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background 0.3s ease-in-out;
-}
-
-.back-button:hover {
-  background: #e04448;
 }
